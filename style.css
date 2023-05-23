@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+:root {
+  --bg-color: #1F1D36;
+  --bg-alt: #3F3351;
+  --accent: #864879;
+  --fg-color: #E9A6A6;
+  
+  box-sizing: content-box;
+}
+
+.blue-gray {
+  --bg-color: #2C3333;
+  --bg-alt: #395B64;
+  --accent: #A5C9CA;
+  --fg-color: #E7F6F2; 
+}
+
+html {
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--fg-color);
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+section {
+  width: max;
+  padding: 2em;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+.large {
+  font-size: 3rem;
+}
+
+.medium {
+  font-size: 2rem;
+}
+
+section:nth-child(even) {
+  background-color: var(--bg-alt);
+}
+
+.change-theme {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  position: sticky;
+  top: 1em;
+  left: 1em;
+  background-color: var(--bg-alt);
+  border-radius: 2em;
+  /* border: solid 2px var(--fg-color); */
+  color: var(--fg-color);
+  padding: 0;
+  margin: 0.5rem;
+  width: 2em;
+  height: 2em;
+  transition: all ease-in-out .3s;
+}
+
+.expand {
+  width: 20em;
+}
+
+
+.theme-icon {
+  width: calc(2em - 4px);
+  height:calc(2em - 4px);
+  border-radius: 50%;
+  border: solid 2px var(--fg-color);
+  background-image: linear-gradient(to right,var(--bg-color) 0 50%, var(--fg-color) 50% 110%)
+}
+
+.theme-icon:hover {
+  transform: scale(1.1);
+}
