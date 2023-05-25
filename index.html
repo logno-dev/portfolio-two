@@ -13,29 +13,38 @@
   <div id="change-theme" class="change-theme">
     <div class="theme-icon" onclick="toggleThemeMenu()"></div>
   </div>
-  <main>
-    <section id="intro">
-      <h1>
-        Hello, my name is Logan Bunch
-      </h1>
-      <p class="large">
-        I dabble with coding...
-      </p>
-    </section>
-    <section id="tidbit-one">
-      <p class="large">
-        In the past year, I've learned a lot about how web development works.
-      </p>
-      <p class="medium">
-        I've worked on polishing my skills with html, css, vanilla javascript and I've experimented quite a bit with
-        React.js and Next.js.
-      </p>
-    </section>
-    <section>
-      <p class="medium">
-        I've implemented a Next.js app using a Mongodb cloud database.
-      </p>
-    </section>
+  <div class="grid-wrapper">
+    <main>
+      <section id="intro">
+        <div class="content-wrapper">
+          <h1>
+            Hello, my name is Logan Bunch
+          </h1>
+          <p class="large">
+            I dabble with coding...
+          </p>
+        </div>
+      </section>
+      <section id="tidbit-one">
+        <div class="content-wrapper">
+          <p class="large">
+            In the past year, I've learned a lot about how web development works.
+          </p>
+          <p class="medium">
+            I've worked on polishing my skills with html, css, vanilla javascript and I've experimented quite a bit with
+            React.js and Next.js.
+          </p>
+        </div>
+      </section>
+      <section>
+        <div class="content-wrapper">
+          <p class="medium">
+            I've implemented a Next.js app using a Mongodb cloud database.
+          </p>
+        </div>
+      </section>
+    </main>
+  </div>
 </body>
 
 </html>
