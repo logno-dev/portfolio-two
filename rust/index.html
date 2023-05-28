@@ -34,10 +34,10 @@ hljs.highlightAll()
         <div class="content-wrapper">
           <p class="large">Welcome to my Rust learning experience</p>
           <p class="body">
-            I've heard that learning your first programming language takes roughly a year, learning your second language takes a few months, learning your third programming language will take a few days. I may have the time frames a bit wrong, but the idea is that learning your first language means that you have to be introduced to all the base computing concepts. This can take quite a bit of time to really drill into habit. After that, learning the syntax of your first programming language may feel like writing with your off-hand for a while, but it eventually starts to click. Then, when it comes to learning your second language, you only have to learn a slightly different syntax, and how the programming language approaches the common computing principles.
+            I've heard that learning your first programming language takes roughly a year, learning your second language takes a few months, learning your third programming language will take a few days. I may have the time frames a bit wrong, but the idea is that learning your first language means that you have to be introduced to all the base computing concepts. This can take quite some time to really drill into habit. After that, learning the syntax of your first programming language may feel like writing with your off-hand for a while, but it eventually starts to click. When it comes to learning your second language, you only have to learn a slightly different syntax, and how the programming language approaches the common computing principles.
           </p>
           <p class="body">
-            That being said, while I have mainly been working in javascript, I have hopped around and played with some other languages, such as Python, R, C, C++, and PHP. I never really pursued any of them, and I never built any substantial projects with them. Most of them, such as C and C++ I only ever got as far as some basic syntax and printing some lines to the console. That means, that so far, I have only really ever programmed in type agnostic languages with automatic garbage collection. Even with my limited knowledge, I can imagine how important these two tools are to developing performant software. Now, one might think that since I am somewhat experienced in javascript, the natural next step to a statically typed language would be Typescript. I know it is inevitable, but I have a severe aversion to Typescript. Something about the overhead of having to build the linter into each project, and then learning to implement types and all the types associated with each package I may bring into to any package, just seems exhausting and fruitless. Beyond all that, I'd have to constantly fight the urge to use the <code>any</code> type everytime a struggle to get something to work. Finally, it still doesn't solve the lack of control of garbage collection, so I am still leaning on some sort of cruch in my development.
+            That being said, while I have mainly been working in javascript, I have hopped around and played with some other languages, such as Python, R, C, C++, and PHP. I never really pursued any of them, and I never built any substantial projects with them. Most of them, such as C and C++ I only ever got as far as some basic syntax and printing some lines to the console. That means that so far, I have only really ever programmed in type agnostic languages with automatic garbage collection. Even with my limited knowledge, I can imagine how important these two tools are to developing performant software. Now, one might think that since I am somewhat experienced in javascript, the natural next step to a statically typed language would be Typescript. I know a Typescript encounter is inevitable, but I have a severe aversion to it. Something about the overhead of having to build the linter into each project, and then learning to implement all the base types plus all the types associated with each package I may bring into to any project, just seems exhausting and fruitless. Beyond all that, I'd have to constantly fight the urge to use the <code>any</code> type everytime I struggle to get something to work. Finally, it still doesn't solve the lack of control of garbage collection, so I am still leaning on some sort of cruch in my development.
           </p>
           <p class="body">
             So all this leads me to Rust. Rust is of course statically typed and has its own flavor manual garbage collection. Rust has a strong community and excellent documentation. So, let's get started.
@@ -62,33 +62,55 @@ Installing Rust
             For this set-up I will be working on a linux system and I'll be using Neovim as my text editor.
           </p>
           <p class="body">
-            In order to write in Rust, we must install Rust and Rust package manager. From what I understand there are a couple of options for this, but I personally simply installed rustup which handles Rust versions as well as installs the rust package manager called cargo. I am on an arch based distro and I use yay as my system package manager, so I can simply run the following:
+            In order to write in Rust, we must install Rust and a Rust package manager. From what I understand there are a couple of options for this, but I personally simply installed rustup which handles Rust versions as well as installs the rust package manager called cargo. I am on an arch based distro and I use yay as my system package manager, so I can simply run the following:
           </p>
-          <pre><code>#home/
+          <pre><code>// ~/
+
 $ yay -S rustup</code></pre>
           <p class="body">
             Great, now we can create a directory for our project and create our first program.
           </p>
-          <pre><code>#home/
+          <pre><code>// ~/
+
 $ cargo new helloworld</code></pre>
           <p class="body">
-            The above command creates a directory within your current directory and initiates a new project including a git repository. Within this project directory, at <code>/src/main.rs</code> we will find the following code:
+            The above command creates a directory within your current directory and initiates a new project including a git repository. Within this project directory, the file <code>/src/main.rs</code> will contain the following code:
           </p>
-          <pre><code class="language-rust">#helloworld/src/main.rs
+          <pre><code class="language-rust">// helloworld/src/main.rs
 
 fn main() {
-  println!("Hello, World!");</code></pre>
+  println!("Hello, World!");
+}</code></pre>
           <p class="body">
-            So we already have a first program. Starting from our home directory, we can run the follwing commands see our first program in action.
+            So we already have our first program. Starting from our home directory, we can run the follwing commands to see our first program in action.
           </p>
-          <pre><code>#home/
+          <pre><code>// ~/
+
 $ cd helloworld
 $ cargo run
     Compiling helloworld v0.1.0 (/home/logno/helloworld)
       Finished dev [unoptimized + debuginfo] target(s) in 0.44s
         Running `target/debug/helloworld`
   Hello, world!</code></pre>
+          <p class="body">
+            Great! We are up and running. Now lets learn some basics.
+          </p>
 
+        </div>
+      </section>
+
+      <section>
+        <div class="content-wrapper">
+          <p class="medium">The Book</p>
+          <p class="body">
+            As my guide, I have chosen to follow <a href="https://doc.rust-lang.org/stable/book/" alt="Rust Programming Language - The Official Book">the official Rust language book</a>.
+          </p>
+          <p class="body">
+            This book is intended for those who have programmed in other languages, but has no requirements for knowledge in a specific language. It can be read chronologically or used as a reference.
+          </p>
+          <p class="body">
+            The book starts with the installation process, which I summarized above, and then drops you straight into a project to help build familiarity with the syntax. After it works through a small guessing game program, it then dives into the specific components that make up the Rust programming language.
+          </p>
         </div>
       </section>
       
