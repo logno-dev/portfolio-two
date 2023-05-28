@@ -155,6 +155,11 @@ section:nth-child(even) {
   justify-content: center;
 }
 
+.hljs {
+  overflow-x: auto !important;
+  max-width: 85vw !important;
+}
+
 .change-theme {
   display: flex;
   justify-content: left;
