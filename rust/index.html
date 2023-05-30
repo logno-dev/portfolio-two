@@ -6,8 +6,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="script.js" defer></script>
-    <link rel="stylesheet" href="highlightjs/styles/github-dark.min.css">
     <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="highlightjs/styles/base16/horizon-dark.min.css">
 <script src="highlightjs/highlight.min.js"></script>
         <script defer>
 hljs.highlightAll()
@@ -38,7 +38,7 @@ hljs.highlightAll()
             I've heard that learning your first programming language takes roughly a year, learning your second language takes a few months, learning your third programming language will take a few days. I may have the time frames a bit wrong, but the idea is that learning your first language means that you have to be introduced to all the base computing concepts. This can take quite some time to really drill into habit. After that, learning the syntax of your first programming language may feel like writing with your off-hand for a while, but it eventually starts to click. When it comes to learning your second language, you only have to learn a slightly different syntax, and how the programming language approaches the common computing principles.
           </p>
           <p class="body">
-            That being said, while I have mainly been working in JavaScript, I have hopped around and played with some other languages, such as Python, R, C, C++, and PHP. I never really pursued any of them, and I never built any substantial projects with them. Most of them, such as C and C++ I only ever got as far as some basic syntax and printing some lines to the console. That means that so far, I have only really ever programmed in type agnostic languages with automatic garbage collection. Even with my limited knowledge, I can imagine how important these two tools are to developing performant software. Now, one might think that since I am somewhat experienced in Javascript, the natural next step to a statically typed language would be Typescript. I know a Typescript encounter is inevitable, but I have a severe aversion to it. Something about the overhead of having to build the tool into each project, and then learning to implement all the base types plus all the types associated with each package I may bring into to any project, just seems exhausting and fruitless. Beyond all that, I'd have to constantly fight the urge to use the <code>any</code> type every time I struggle to get something to work. Finally, it still doesn't solve the lack of control of garbage collection, so I am still leaning on some sort of crutch in my development.
+            That being said, while I have mainly been working in JavaScript, I have hopped around and played with some other languages, such as Python, R, C, C++, and PHP. I never really pursued any of them, and I never built any substantial projects with them. Most of them, such as C and C++ I only ever got as far as some basic syntax and printing some lines to the console. That means that so far, I have only really ever programmed in type agnostic languages with automatic garbage collection. Even with my limited knowledge, I can imagine how important these two tools are to developing performant software. Now, one might think that since I am somewhat experienced in JavaScript, the natural next step to a statically typed language would be Typescript. I know a Typescript encounter is inevitable, but I have a severe aversion to it. Something about the overhead of having to build the tool into each project, and then learning to implement all the base types plus all the types associated with each package I may bring into to any project, just seems exhausting and fruitless. Beyond all that, I'd have to constantly fight the urge to use the <code>any</code> type every time I struggle to get something to work. Finally, it still doesn't solve the lack of control of garbage collection, so I am still leaning on some sort of crutch in my development.
           </p>
           <p class="body">
             So all this leads me to Rust. Rust is of course statically typed and has its own flavor manual garbage collection. Rust has a strong community and excellent documentation. So, let's get started.
@@ -72,7 +72,7 @@ hljs.highlightAll()
             The Set-up
           </p>
          <p class="body">
-            With javascript, you can open any text editor and start chugging out code and see its effects in the browser. Unfortunately Rust will not work this way. We need to set up our development environment.
+            With JavaScript, you can open any text editor and start chugging out code and see its effects in the browser. Unfortunately Rust will not work this way. We need to set up our development environment.
           </p> 
           <p class="small">
 Installing Rust
@@ -83,13 +83,13 @@ Installing Rust
           <p class="body">
             In order to write in Rust, we must install Rust and a Rust package manager. From what I understand there are a couple of options for this, but I personally simply installed rustup which handles Rust versions as well as installs the rust package manager called cargo. I am on an arch based distro and I use yay as my system package manager, so I can simply run the following:
           </p>
-          <pre><code>## ~/
+          <pre><code># ~/
 
 $ yay -S rustup</code></pre>
           <p class="body">
             Great, now we can create a directory for our project and create our first program.
           </p>
-          <pre><code>## ~/
+          <pre><code># ~/
 
 $ cargo new helloworld</code></pre>
           <p class="body">
@@ -128,8 +128,38 @@ $ cargo run
             Variables and Mutability
           </p>
           <p class="body">
-            Variables in Rust are immutable by default, which means that once you declare a variable it cannot be changed throughout its life-cycle. At the time of initiation, you may designate  variable as mutable by using the <code>mut</code> key word.  
+            Variables in Rust are immutable by default, which means that once you declare a variable it cannot be changed throughout its life-cycle. At the time of initiation, you may designate a variable as mutable by using the <code>mut</code> key word. Variables are initiated by using the <code>let</code> key word.
           </p>
+          <p class="body">
+            Constants are initiated with <code>const</code> and are also immutable. Constants differ from immutable variables in a few ways. Constants may never be mutable. Constants must always declare a type, where variables are allowed to use inferred types. Lastly, constants can be declared in any scope including the global scope and they will be valid through the entire run time of the program.
+          </p>
+          <pre><code class="language-rust">// Example variable and constant declarations
+
+  let x = 5;
+
+  let mut y = 3;
+
+  x = 7; // invalid; x is immutable, this will result in a compile time error
+
+  y = 9; // valid; y is mutable
+
+  // this is called shadowing, this creates a new variable named x and assigns it the value of the old x + 1
+  let x = x + 1; // valid
+
+  {
+    let x = x * 2; // this is also valid but will the value of x will return to 6 at the end of this scope.
+  }
+
+  const HOURS_IN_SHIFT: u32 = 8; // this is a constant, constants use the SCREAMING_SNAKE case as their naming convention</code></pre>
+          <p class="small">Data Types</p>
+          <p class="body">
+            As I have mentioned previously, Rust being a statically typed language was one of the main reasons I gravitated to it. If a value is unambiguous, the compiler can infer the type, but if there is multiple possible types, a type must be declared. At this point in the book, only a few types are covered. 
+          </p>
+          <p class="small">Scalar Types</p>
+          <p class="body">
+            Scalar types are single values. The four primary scalar types in rust include: integers, floating-point numbers, Booleans, and characters.
+          </p>
+
         </div>
       </section>
       
