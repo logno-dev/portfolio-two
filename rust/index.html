@@ -159,6 +159,28 @@ $ cargo run
           <p class="body">
             Scalar types are single values. The four primary scalar types in rust include: integers, floating-point numbers, Booleans, and characters.
           </p>
+          <p class="body"><strong>Integer:</strong> Numbers without fractional components. Integers can be declared as 8, 16, 32, 64, or 128-bit which determines the amount of space the value takes in memory. A <code>u</code> and <code>i</code> is used to denote if the integer is unsigned or signed respectively, where a signed integer can span the negative number range and an unsigned may only be positive integers. An additional integer type of <code>isize</code> and <code>usize</code> can be used to adjust to the architecture of the computer the program is running on.</p>
+          <p class="body"><strong>Floating-point type:</strong> Numbers that contain a fractional component. Rust has two floating-point types; <code>f32</code> and <code>f64</code>. Rust defaults to 64-bit because it is roughly the same speed as the 32-bit variant, but is capable of greater precision.</p>
+          <p class="body"><strong>Boolean:</strong> As in most languages, boolean types are represented as <code>true</code> and <code>false</code>. Booleans are specified using <code>bool</code></p>
+          <p class="body"><strong>Character:</strong> coming from JavaScript, this type seemed a bit odd to me, but I suppose I will learn where this will be useful. The character type represents, a single character, which could be a letter, or a unicode value. This type is specified using single quotes as opposed to double quotes when declaring string literals.</p>
+          <pre><code class="language-rust">// Rust scalar type examples:
+
+  // Integers
+  let x = 5;
+  let y: u32 = 423;
+  let z: i64 = -1_743; // the under dash is used as a visual separator and will not be interpreted by the compiler
+
+  // Floating-point type
+  let a = 4.2904;
+  let b: f64 = 9.034857372;
+
+  // Boolean
+  let f = true;
+  let t: bool = false;
+
+  // Character
+  let letter = 'c';
+  let fancy_char: char = '☠';</code></pre>
 
         </div>
       </section>
